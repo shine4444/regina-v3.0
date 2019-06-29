@@ -1,0 +1,41 @@
+/******************************* REGINA OVERVIEW *********************************/
+Regina is a free, practical RTOS. Now it supports include STM32 F1/F4F/F7 series. 
+As a tiny RTOS, Regina does not have various modules. However, it still provides 
+basic universal functions for user, like soft-timer, message queue and semaphore. 
+Because of its small body, it runs very fast and stable.
+
+<1> Characters of Regina task are listed as follows:
+	1) wide range of task priority (0u(max) - 65535u(min)).
+	2) both the preemptive priority and the time slice rotation are supported.
+	3) task can be operated in interrupt service routines or ISR.
+	4) task does not involve dynamic memory allocation during running.
+
+<2> Characters of Regina soft-timer are listed as follows:
+	1) it supports single and periodic timer mode.
+	2) its function argument and timer period can be dynamically changed.
+	3) its call-back function is invoked under protection.
+
+<3> Characters of Regina message queue are listed as follows:
+	1) message passing does not involve dynamic memory allocation.
+	2) it uses circular queue to store messages.
+	3) message can be sent in ISR.
+
+<4> Characters of Regina semaphore are listed as follows:
+	1) the type of semaphore include mutex and binary (lock).
+	2) type of mutex solved the problem of priority inversion.
+	3) type of binary (lock) can be released in ISR.
+
+This version of Regina is 3.0. I finished it in 2019/06/29. The reason I have to 
+write it is that previous versions all have some problems. In this version, I've 
+changed a lot to make Regina more practical. I try to avoid using dynamic memory 
+allocation to improve the real-time performance of Regina. Meanwhile, I also 
+optimized the code to support the CLANG and GCC Compiler. For me, The new version 
+of Regina is the best gift for my graduation.
+
+If you're interested in it, just download and have a test on your board. You can 
+find some simple examples in Regina/doc/ directory. Of course, if you wanna 
+transplant it to another platform, it does not need to do too many works. For you 
+interesting guys, send me a email if you have problems about use of Regina. I'd 
+try my best to help you if I know. Here is my email account: 1161985414@qq.com 
+I look forward to your email.
+
